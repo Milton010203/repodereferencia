@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Inicio</title>
+  <title>Food Store - Catálogo</title>
   <link rel="stylesheet" href="/src/pages/store/home/home.css">
 </head>
 <header class="display-header">
@@ -15,20 +14,14 @@
     <a href="admin.html">Panel Admin</a>
   </nav>
 </header>
-
-<aside >
-  <h2 class="justificar-alcentro">Categorías</h2>
-  <ul class="justificar-alcentro" id="lista-categorias"></ul>
-</aside>
-<main>
-  <form>
-    <input type="text" placeholder="Buscar producto">
-    <button type="submit">Buscar</button>
-  </form>
-    <section>
-      <ul id="contenedor-productos"></ul>
-    </section>
-</main>
+<body>
+  <h1>Catálogo de Productos</h1>
+  <input type="text" id="searchInput" placeholder="Buscar producto...">
+  <aside id="categories"></aside>
+  <section id="productList"></section>
+  <a href="../cart/cart.html">Ir al carrito</a>
+  <script type="module" src="./home.ts"></script>
+</body>
 <footer>
   <ul>
     <li>Sucursal en Villa Arcoiris - Calle Duende 1234</li>
@@ -37,6 +30,4 @@
     <li>Horarios: Lunes a viernes: 10hs a 23:30hs</li>
   </ul>
 </footer>
-<script type="module" src="/src/main.ts"></script>
-</body>
 </html>

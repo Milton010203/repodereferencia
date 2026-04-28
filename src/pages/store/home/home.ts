@@ -1,0 +1,63 @@
+import { productos, getCategories } from "../../../data/data";
+import type { Product } from "../../../types/product";
+
+const productList = document.getElementById("productList")!;
+const searchInput = document.getElementById("searchInput") as HTMLInputElement;
+const categoriesContainer = document.getElementById("categories")!;
+
+function renderProducts(products: Product[]) {
+  productList.innerHTML = "";
+  if (products.length === 0) {
+    productList.innerHTML = "<p>No hay coincidencias</p>";
+    return;
+  }
+  products.forEach(p => {
+    const card = document.createElement("div");
+    card.classList.add("card")
+    card.innerHTML = `
+      <h3>${p.nombre}</h3>
+      <p>Precio: $${p.precio}</p>
+      <button data-id="${p.id}">Agregar al carrito</button>
+    `;
+    productList.appendChild(card);
+  });
+
+  document.querySelectorAll("button[data-id]").forEach(btn => {
+    btn.addEventListener("click", e => {
+      const id = (e.target as HTMLButtonElement).dataset.id!;
+      addToCart(id);
+    });
+  });
+}
+
+function renderCategories() {
+  const categories = getCategories();
+  categoriesContainer.innerHTML = categories.map(c => `<button>${c}</button>`).join("");
+  categoriesContainer.querySelectorAll("button").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const cat = btn.textContent!;
+      renderProducts(productos.filter(p => p.categoria === cat));
+    });
+  });
+}
+
+function addToCart(id: string) {
+  const cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  const product = productos.find(p => p.id === id)!;
+  const existing = cart.find((item: any) => item.id === id);
+  if (existing) {
+    existing.quantity++;
+  } else {
+    cart.push({ ...product, quantity: 1 });
+  }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  alert("Producto agregado al carrito");
+}
+
+searchInput.addEventListener("input", () => {
+  const term = searchInput.value.toLowerCase();
+  renderProducts(productos.filter(p => p.nombre.toLowerCase().includes(term)));
+});
+
+renderProducts(productos);
+renderCategories();

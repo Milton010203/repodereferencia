@@ -1,7 +1,8 @@
+import type { Product } from "../types/product";
 export const categorias = ["Hamburguesas", "Lomitos", "Bebidas"];
-export const productos = [
+export const productos: Product[] = [
     {
-        id: 1,
+        id: "1",
         nombre: "Hamburguesa simple",
         descripcion: "Pan de papa, tomate, lechuga, medallón de carne de 100g, queso cheddar y salsa X.",
         precio: 11000,
@@ -9,7 +10,7 @@ export const productos = [
         categoria: "Hamburguesas"
     },
     {
-        id: 2,
+        id: "2",
         nombre: "Hamburguesa doble",
         descripcion: "Pan de papa, tomate, lechuga, Dos medallones de carne de 100g, queso cheddar y salsa X.",
         precio: 13000,
@@ -17,7 +18,7 @@ export const productos = [
         categoria: "Hamburguesas"
     },
     {
-        id: 11,
+        id: "11",
         nombre: "Lomo Completo",
         descripcion: "Pan de lomo, jamon, queso, tomate, mayonesa casera, bife de lomo, huevo frito y lechuga con salsa X.",
         precio: 14000,
@@ -25,7 +26,7 @@ export const productos = [
         categoria: "Lomitos"
     },
     {
-        id: 12,
+        id: "12",
         nombre: "Pizza Lomo",
         descripcion: "2 Pizzas de muzzarela, jamon, queso, tomate, mayonesa casera, bife de lomo, huevo frito y lechuga con salsa X.",
         precio: 30000,
@@ -33,7 +34,7 @@ export const productos = [
         categoria: "Lomitos"
     },
     {
-        id: 21,
+        id: "21",
         nombre: "Agua",
         descripcion: "Agua mineral 500ml Nestle-PurezaVital Sin gas.",
         precio: 2500,
@@ -41,7 +42,7 @@ export const productos = [
         categoria: "Bebida"
     },
     {
-        id: 22,
+        id: "22",
         nombre: "Gaseosa",
         descripcion: "Refresco Coca-Cola 500ml linea Coca",
         precio: 3200,
@@ -49,3 +50,7 @@ export const productos = [
         categoria: "Bebida"
     },
 ];
+
+export function getCategories(): string[] {
+  return [...new Set(productos.map(p => p.categoria))];
+}
