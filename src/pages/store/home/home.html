@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+  <link rel="stylesheet" href="/src/pages/store/home/home.css">
+</head>
+<header class="display-header">
+  <h1 >🍔 Food Store</h1>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Mis Pedidos</a>
+    <a href="#">Carrito</a>
+    <a href="admin.html">Panel Admin</a>
+  </nav>
+</header>
+
+<aside >
+  <h2 class="justificar-alcentro">Categorías</h2>
+  <ul class="justificar-alcentro" id="lista-categorias"></ul>
+</aside>
+<main>
+  <form>
+    <input type="text" placeholder="Buscar producto">
+    <button type="submit">Buscar</button>
+  </form>
+    <section>
+      <ul id="contenedor-productos"></ul>
+    </section>
+</main>
+<footer>
+  <ul>
+    <li>Sucursal en Villa Arcoiris - Calle Duende 1234</li>
+    <li>mail de contacto: hamburguesasduende@gmail.com</li>
+    <li>telefono: +54 3511234567899</li>
+    <li>Horarios: Lunes a viernes: 10hs a 23:30hs</li>
+  </ul>
+</footer>
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
