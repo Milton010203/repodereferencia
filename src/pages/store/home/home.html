@@ -10,7 +10,7 @@
   <nav>
     <a href="#">Inicio</a>
     <a href="#">Mis Pedidos</a>
-    <a href="#">Carrito</a>
+    <a href="../cart/cart.html">Carrito</a>
     <a href="admin.html">Panel Admin</a>
   </nav>
 </header>
@@ -23,7 +23,6 @@
     <h2 style="margin: 0.3rem auto 0.3rem"class="justificar-alcentro">Categorias</h2>
     <ul class="categorias_ordenadas" id="categories"></ul>
     <section id="productList"></section>
-    <a href="../cart/cart.html">Ir al carrito</a>
     <script type="module" src="./home.ts"></script>
   </body>
 </main>
@@ -36,17 +35,3 @@
   </ul>
 </footer>
 </html>
-
-<aside >
-  <h2 class="justificar-alcentro">Categorías</h2>
-  <ul class="justificar-alcentro" id="lista-categorias"></ul>
-</aside>
-<main>
-  <form>
-    <input type="text" placeholder="Buscar producto">
-    <button type="submit">Buscar</button>
-  </form>
-    <section>
-      <ul id="contenedor-productos"></ul>
-    </section>
-</main>
