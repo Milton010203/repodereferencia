@@ -49,3 +49,6 @@ http://localhost:5173
 LINK DEL VIDEO DE EXPLICACION: 
 
 https://www.youtube.com/watch?v=1ygBA0OOw5w
+
+Repositorio de referencia:
+https://github.com/Milton010203/repodereferencia.git
