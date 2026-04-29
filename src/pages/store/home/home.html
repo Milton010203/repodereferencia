@@ -14,14 +14,19 @@
     <a href="admin.html">Panel Admin</a>
   </nav>
 </header>
-<body>
-  <h1>Catálogo de Productos</h1>
-  <input type="text" id="searchInput" placeholder="Buscar producto...">
-  <aside id="categories"></aside>
-  <section id="productList"></section>
-  <a href="../cart/cart.html">Ir al carrito</a>
-  <script type="module" src="./home.ts"></script>
-</body>
+<main>
+  <body>
+    <div style ="display: flex; flex-direction: column; align-items: center;">
+      <h1 class="justificar-alcentro">Catálogo de Productos</h1>
+      <input class="claseinput justificar-alcentro" type="text" id="searchInput" placeholder="Buscar producto...">
+    </div>
+    <h2 style="margin: 0.3rem auto 0.3rem"class="justificar-alcentro">Categorias</h2>
+    <ul class="categorias_ordenadas" id="categories"></ul>
+    <section id="productList"></section>
+    <a href="../cart/cart.html">Ir al carrito</a>
+    <script type="module" src="./home.ts"></script>
+  </body>
+</main>
 <footer>
   <ul>
     <li>Sucursal en Villa Arcoiris - Calle Duende 1234</li>
@@ -31,3 +36,17 @@
   </ul>
 </footer>
 </html>
+
+<aside >
+  <h2 class="justificar-alcentro">Categorías</h2>
+  <ul class="justificar-alcentro" id="lista-categorias"></ul>
+</aside>
+<main>
+  <form>
+    <input type="text" placeholder="Buscar producto">
+    <button type="submit">Buscar</button>
+  </form>
+    <section>
+      <ul id="contenedor-productos"></ul>
+    </section>
+</main>
